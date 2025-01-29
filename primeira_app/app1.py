@@ -32,35 +32,38 @@ def finalizar_app():
 
 def opcao_invalida():
     print('Opção Inválida\n')
-    input('Pressione ENTER para continuar...')
+    voltar_menu()
+
+def exibir_subtitulo(texto):
+    os.system('clear')
+    print(f'{texto}\n')
+
+
+def voltar_menu():
+    input('Pressione ENTER para voltar ao menu...\n')
     main()
 
+
 def cadastrar_restaurante():
-    os.system('clear')
-    print('Cadastro de novos restaurantes\n')
-    nome_do_restaurante = input('Digite o nome do restaurante que deseja cadastrar:')
+    exibir_subtitulo('Cadastro de novos restaurantes\n')
+    nome_do_restaurante = input('Digite o nome do restaurante que deseja cadastrar: ')
     restaurantes.append(nome_do_restaurante)
     print(f'O restaurante {nome_do_restaurante} foi cadastrado com sucesso!')
-    input('Digite uma tecla para voltar ao menu principal.')
-    main()
+    voltar_menu()
 
 
 def listar_restaurantes():
-    os.system('clear')
-    print('Lista de restaurantes cadastrados\n')
-
+    exibir_subtitulo('Lista de restaurantes cadastrados\n')
     for restaurante in restaurantes:
         print(f'- {restaurante}')
-
-    input('\nDigite uma tecla para voltar ao menu principal.')
-    main()
+    voltar_menu()
 
 
 
 def opcoes():
     try:
         opcao_escolhida = int(input("Escolha uma opção: "))
-        print(f"Voce escolheu a opcao: '{opcao_escolhida}'")
+        print(f"Voce escolheu a opcao: '{opcao_escolhida}'\n")
 
         match opcao_escolhida:
             case 1:
@@ -76,6 +79,7 @@ def opcoes():
                 opcao_invalida()
     except ValueError:
         print("Opção inválida, por favor insira um número!\n")
+        opcoes()
 
 def main():
     os.system('clear')
