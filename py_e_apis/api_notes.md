@@ -77,5 +77,52 @@ Por exemplo, o código 404 indica que a página solicitada não foi encontrada.
 Esses códigos indicam que a solicitação não pôde ser concluída devido a um erro no lado do servidor.
 Por exemplo, o código 500 indica que ocorreu um erro interno no servidor.
 
+----------------------
+
+# Parâmetros de requisições
+
+## 1.Get:
 
 
+### url:
+- Url do recurso que deseja obter os dados. **Parâmetro obrigatório** e deve ser uma **string** contendo a URl a ser trabalhada
+
+### params:
+- Dicionário ou lista de tupla contendo os parâmetros de consulta a serem incluídos na URL<br>
+Por exemplo, para fazer uma requisição GET para a API do Github e objer os repositórios de forma ordenada, pode-se passar o argumento
+\
+```params={”sort”: “name”}```
+\
+e ter os repositórios em ordem alfabética. Isso resultaria em uma URL como esta:
+```https://api.github.com/users/Username/repos?sort=name```
+
+### headers:
+- Um dicionário contendo os cabeçalhos HTTP a serem enviados com a requisição. Os cabeçalhos podem ser usados, por exemplo, para enviar
+informações de autenticação ou para definir o tipo de conteúdo esperado na resposta.
+
+### auth:
+- uma tupla contendo as credenciais de autenticação a serem usadas na requisição.
+O primeiro elemento da tupla é o nome de usuário e o segundo é a senha.
+Essa opção é usada quando a API requer autenticação.
+
+
+### timeout:
+- O tempo limite em segundos para aguardo da resposta da requisição.
+Se a resposta não for recebida dentro do tempo limite a biblioteca gera um erro de tempo limite.
+
+### verify:
+- Um valor booleano (True ou False) que indica se deve ser verificado o certificado SSL da URL.
+Se definido como True, a biblioteca verifica a validade.
+Se definido como False, a biblioteca não verifica o certificado.
+
+**O método GET é amplamente usado quando trabalhamos com APIs REST para obter informações de recursos específicos,
+e a biblioteca Requests oferece muitas opções para personalizar a requisição e manipular a resposta.**
+
+
+## 2. Post:
+
+## 3. Put:
+
+## 4. Delete:
+
+## 5. Patch:
