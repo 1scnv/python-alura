@@ -26,3 +26,15 @@ for page_num in range(1,6):
 
 print(len(repos_list))
 print(len(repos_list[0]))
+
+print(repos_list[0][1]['name'])
+
+repos_name = []
+
+for page in repos_list: # laco para acessar as paginas
+    for repo in page: #laco para acessar os repositorios dentro das paginas
+        repo['name'] # pega o nome do repo
+        repos_name.append(repo['name']) #adiciona o repo na variavel repos_name
+
+print(repos_name)
+print(len(repos_name))
