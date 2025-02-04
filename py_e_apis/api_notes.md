@@ -81,7 +81,7 @@ Por exemplo, o código 500 indica que ocorreu um erro interno no servidor.
 
 # Parâmetros de requisições
 
-## 1.Get:
+## 1. Get:
 
 
 ### url:
@@ -126,3 +126,27 @@ e a biblioteca Requests oferece muitas opções para personalizar a requisição
 ## 4. Delete:
 
 ## 5. Patch:
+
+-----
+
+# Tipos de Autenticação
+
+## API Key
+É o mais simples e comum. API fornece uma chave de acesso exclusiva para cada usuário
+A chave é enviada junto com a requisição para a API e é verificada pelo servidor para permitir ou negar o acesso. 
+## Token
+Nesse tipo a API fornece um token para cada usuário após a autenticação ser bem sucedida. O token tem um tempo de validade
+e pode ser necessário solicitar umnovo token após o vencimento
+## OAuth
+Protocolo de autorização que permite que uma pessoa condeda acesso aos seus recursos em uma API sem compartilhar credenciais.
+O usuário é redirecionado para a página de login para inserir credenciais
+Após é solicitada a autorização para a aplicaçãoa cessar os recuros.
+ A autorização é concedida por meio de um token OAuth, que permite que a aplicação acesse apenas os recursos autorizados pela pessoa usuária.
+
+Algumas APIs que utilizam esses tipos de autenticação são:
+
+    API da NASA: usa uma chave de API para autenticação e controle de acesso.
+
+    API do GitHub: usa token de acesso para autenticação e controle de acesso aos recursos.
+
+    API do Spotify: usa OAuth para autenticação e autorização de acesso aos recursos.

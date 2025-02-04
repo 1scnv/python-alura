@@ -1,13 +1,28 @@
 import requests
 
-headers = {'X-Github-Api-Version':'2022-11-28'}
 base_url = 'https://api.github.com'
 owner = 'amzn'
 url = f'{base_url}/users/{owner}/repos'
+access_token = '<token>'
+headers ={
+    'X-Github-Api-Version':'2022-11-28',
+    'Authorization':'Bearer ' + access_token
+}
 print(f'A URL é:{url}')
-
 
 response = requests.get(url, headers=headers)
 print(f'O resultado da requisição é: {response.status_code}')
 
 print(len(response.json()))
+
+repos_list=[]
+for page_num in range(1,6):
+    try:
+        url_page = f'{url}?page={page_num}'
+        response = requests.get(url_page, headers=headers)
+        repos_list.append(response.json())
+    except:
+        repos_list.append(None)
+
+print(len(repos_list))
+print(len(repos_list[0]))
