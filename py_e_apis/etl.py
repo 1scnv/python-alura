@@ -1,4 +1,5 @@
 import requests
+import pandas as pd
 
 base_url = 'https://api.github.com'
 owner = 'amzn'
@@ -33,7 +34,7 @@ repos_name = []
 
 for page in repos_list: # laco para acessar as paginas
     for repo in page: #laco para acessar os repositorios dentro das paginas
-        repo['name'] # pega o nome do repo
+        repo['name']  # pega o nome do repo
         repos_name.append(repo['name']) #adiciona o repo na variavel repos_name
 
 print(repos_name)
@@ -46,3 +47,9 @@ for page in repos_list:
     for repo in page:
         repo['language']
         repos_language.append(repo['language'])
+
+dados_amz = pd.DataFrame()
+dados_amz['repository_name'] = repos_name
+dados_amz['language'] = repos_language
+
+dados_amz.to_csv('data/repos_amz.csv')
