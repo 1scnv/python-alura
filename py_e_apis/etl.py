@@ -13,7 +13,7 @@ print(f'A URL é:{url}')
 response = requests.get(url, headers=headers)
 print(f'O resultado da requisição é: {response.status_code}')
 
-print(len(response.json()))
+#print(len(response.json()))
 
 repos_list=[]
 for page_num in range(1,6):
@@ -24,10 +24,10 @@ for page_num in range(1,6):
     except:
         repos_list.append(None)
 
-print(len(repos_list))
-print(len(repos_list[0]))
+#print(len(repos_list))
+#print(len(repos_list[0]))
 
-print(repos_list[0][1]['name'])
+#print(repos_list[0][1]['name'])
 
 repos_name = []
 
@@ -37,4 +37,12 @@ for page in repos_list: # laco para acessar as paginas
         repos_name.append(repo['name']) #adiciona o repo na variavel repos_name
 
 print(repos_name)
-print(len(repos_name))
+#print(len(repos_name))
+
+print(repos_list[1][1]['language'])
+
+repos_language = []
+for page in repos_list:
+    for repo in page:
+        repo['language']
+        repos_language.append(repo['language'])
