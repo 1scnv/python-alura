@@ -4,7 +4,7 @@ import pandas as pd
 base_url = 'https://api.github.com'
 owner = 'amzn'
 url = f'{base_url}/users/{owner}/repos'
-access_token = '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'
+access_token = '<token>'
 headers ={
     'X-Github-Api-Version':'2022-11-28',
     'Authorization':'Bearer ' + access_token
