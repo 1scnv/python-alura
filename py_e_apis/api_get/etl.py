@@ -4,7 +4,7 @@ import pandas as pd
 base_url = 'https://api.github.com'
 owner = 'amzn'
 url = f'{base_url}/users/{owner}/repos'
-access_token = '<token>'
+access_token = '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'
 headers ={
     'X-Github-Api-Version':'2022-11-28',
     'Authorization':'Bearer ' + access_token
@@ -40,7 +40,7 @@ for page in repos_list: # laco para acessar as paginas
 print(repos_name)
 #print(len(repos_name))
 
-print(repos_list[1][1]['language'])
+print(repos_list[0][1]['language'])
 
 repos_language = []
 for page in repos_list:
